@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Constants } from '../../constants/Constants'
 import Item from '../../Item'
+import { ItemsService } from '../../services/items.service';
 
 @Component({
   selector: 'app-tab-item',
@@ -11,11 +12,12 @@ export class TabItemComponent implements OnInit {
 
   @Input() public activeItem: String = ""
 
-  public items: Array<Item> = [new Item("ab", true), new Item("cd", false), new Item("ef", true), new Item("gh", false)]
+  public items!: Array<Item>;
 
-  constructor() { }
+  constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
+    this.items = this.itemsService.getItems()
   }
 
   private async getAllItems() {

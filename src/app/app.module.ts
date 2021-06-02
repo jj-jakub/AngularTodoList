@@ -11,6 +11,7 @@ import { FinishedItemsListContainerComponent } from './ components/finished-item
 import { TodoItemsListContainerComponent } from './ components/todo-items-list-container/todo-items-list-container.component';
 import { ListItemComponent } from './ components/list-item/list-item.component';
 import { NewListItemInputComponent } from './ components/new-list-item-input/new-list-item-input.component';
+import { ItemsService } from './services/items.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NewListItemInputComponent } from './ components/new-list-item-input/new
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
