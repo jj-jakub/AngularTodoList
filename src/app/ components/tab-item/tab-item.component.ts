@@ -11,7 +11,7 @@ export class TabItemComponent implements OnInit {
 
   @Input() public activeItem: String = ""
 
-  public items: Array<Item> = [new Item("ab", true), new Item("cd", true), new Item("ef", true), new Item("gh", true)]
+  public items: Array<Item> = [new Item("ab", true), new Item("cd", false), new Item("ef", true), new Item("gh", false)]
 
   constructor() { }
 

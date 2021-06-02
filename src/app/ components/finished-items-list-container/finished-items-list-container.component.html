@@ -1,1 +1,5 @@
 <p>finished-items-list-container works!</p>
+
+<div *ngFor="let item of items">
+    <h2 *ngIf="item.isChecked"> FinishedItemsContainer item text: {{item.text}}, item isChecked: {{item.isChecked}}</h2>
+</div>
