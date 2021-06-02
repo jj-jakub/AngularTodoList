@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tab-menu-container',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab-menu-container.component.css']
 })
 export class TabMenuContainerComponent implements OnInit {
+
+  @Input() public activeItem: String = ""
+  @Input() public tabItems: String = ""
 
   constructor() { }
 

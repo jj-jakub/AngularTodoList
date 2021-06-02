@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Constants } from '../../constants/Constants'
 
 @Component({
@@ -8,6 +8,8 @@ import { Constants } from '../../constants/Constants'
 })
 export class TabItemComponent implements OnInit {
 
+  @Input() public activeItem: String = ""
+  
   private items: any;
 
   constructor() { }

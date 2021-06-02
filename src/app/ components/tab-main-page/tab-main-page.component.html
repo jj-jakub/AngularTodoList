@@ -1,7 +1,5 @@
 
 <div>
-    <p>tab-main-page</p>
-<!-- <TabMenuContainer {activeItem} {tabItems} on:tabChangeEvent={tabChange}/>
-  
-    <TabItem {activeItem}/> -->
+    <app-tab-menu-container [activeItem]="activeItem" [tabItems]="tabItems"></app-tab-menu-container>
+    <app-tab-item [activeItem]="activeItem"></app-tab-item>
 </div>

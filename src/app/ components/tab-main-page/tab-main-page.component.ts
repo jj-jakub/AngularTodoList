@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Constants } from '../../constants/Constants'
 
 @Component({
   selector: 'app-tab-main-page',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabMainPageComponent implements OnInit {
 
+  public activeItem: String = "abcd"
+  public tabItems = Constants.allItemsTabName
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
