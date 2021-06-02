@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import Item from '../../Item'
 
 @Component({
   selector: 'app-all-list-container',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-list-container.component.css']
 })
 export class AllListContainerComponent implements OnInit {
+
+  @Input() items: Array<Item> = Array(0)
 
   constructor() { }
 

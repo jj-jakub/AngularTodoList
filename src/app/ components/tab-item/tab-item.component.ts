@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Constants } from '../../constants/Constants'
+import Item from '../../Item'
 
 @Component({
   selector: 'app-tab-item',
@@ -9,8 +10,8 @@ import { Constants } from '../../constants/Constants'
 export class TabItemComponent implements OnInit {
 
   @Input() public activeItem: String = ""
-  
-  private items: any;
+
+  public items: Array<Item> = [new Item("ab", true), new Item("cd", true), new Item("ef", true), new Item("gh", true)]
 
   constructor() { }
 

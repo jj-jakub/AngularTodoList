@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { TabMainPageComponent } from './ components/tab-main-page/tab-main-page.component';
 import { TabItemComponent } from './ components/tab-item/tab-item.component';
 import { TabMenuContainerComponent } from './ components/tab-menu-container/tab-menu-container.component';
-import { AllListContainerComponent } from './all-list-container/all-list-container.component';
-import { FinishedItemsListContainerComponent } from './finished-items-list-container/finished-items-list-container.component';
-import { TodoItemsListContainerComponent } from './todo-items-list-container/todo-items-list-container.component';
-import { ListItemComponent } from './list-item/list-item.component';
-import { NewListItemInputComponent } from './new-list-item-input/new-list-item-input.component';
+import { AllListContainerComponent } from './ components/all-list-container/all-list-container.component';
+import { FinishedItemsListContainerComponent } from './ components/finished-items-list-container/finished-items-list-container.component';
+import { TodoItemsListContainerComponent } from './ components/todo-items-list-container/todo-items-list-container.component';
+import { ListItemComponent } from './ components/list-item/list-item.component';
+import { NewListItemInputComponent } from './ components/new-list-item-input/new-list-item-input.component';
 
 @NgModule({
   declarations: [
