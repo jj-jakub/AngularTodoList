@@ -12,13 +12,15 @@ export class TabItemComponent implements OnInit {
 
   @Input() public activeItem: String = ""
 
-  public items!: Array<Item>;
+  public items: Array<Item> = []
   public Constants = Constants
   
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
-    this.items = this.itemsService.getItems()
+    this.itemsService.getAllItems().subscribe(
+        items => this.items = items
+    )
   }
 
   onNewItemCreated(newItemText: String) {
