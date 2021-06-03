@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewListItemInputComponent implements OnInit {
 
+  public newItemText: String = ""
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onAddButtonClick() {
+    alert(this.newItemText)
+    this.newItemText = ""
+  }
 }
