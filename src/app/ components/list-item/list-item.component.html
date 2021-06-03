@@ -1,6 +1,6 @@
-<div>
+<div [ngClass]="'listItem'">
     <input (change)="onCheckboxClick($event)" type="checkbox" [checked]="item.done">
-    
+
     <p>{{item.text}}</p>
     
     <button (click)="onDeleteListItemClick()">Delete</button>
