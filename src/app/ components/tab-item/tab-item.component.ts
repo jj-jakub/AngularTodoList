@@ -13,7 +13,8 @@ export class TabItemComponent implements OnInit {
   @Input() public activeItem: String = ""
 
   public items!: Array<Item>;
-
+  public Constants = Constants
+  
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
