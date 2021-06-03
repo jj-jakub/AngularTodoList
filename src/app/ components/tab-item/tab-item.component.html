@@ -1,8 +1,11 @@
 <div>
+    <!-- <app-all-list-container [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-all-list-container> -->
+    <!-- <app-finished-items-list [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"))></app-finished-items-list> -->
+    <!-- <app-todo-items-list-container [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-todo-items-list-container> -->
     <ng-container [ngSwitch]="activeItem">
-        <app-all-list-container *ngSwitchCase="Constants.allItemsTabName" [items]="items"></app-all-list-container>
-        <app-finished-items-list-container *ngSwitchCase="Constants.finishedItemsTabName" [items]="items"></app-finished-items-list-container>
-        <app-todo-items-list-container *ngSwitchDefault [items]="items"></app-todo-items-list-container>
+        <app-all-list-container *ngSwitchCase="Constants.allItemsTabName" [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-all-list-container>
+        <app-finished-items-list-container *ngSwitchCase="Constants.finishedItemsTabName" [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-finished-items-list-container>
+        <app-todo-items-list-container *ngSwitchDefault [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-todo-items-list-container>
     </ng-container>
     <app-new-list-item-input (eventEmitter)="onNewItemCreated($event)"></app-new-list-item-input>
 </div>

@@ -1,12 +1,12 @@
 class Item {
     
-    constructor(objectId: String, text: String, isChecked: Boolean) {
-        this.objectId = objectId
+    constructor(_id: String, text: String, isChecked: Boolean) {
+        this._id = _id
         this.text = text;
         this.isChecked = isChecked
     }
 
-    objectId: String
+    _id: String
     text: String
     isChecked: Boolean
 }

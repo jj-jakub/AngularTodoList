@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import Item from '../../Item'
 
 @Component({
@@ -10,16 +10,19 @@ export class FinishedItemsListContainerComponent implements OnInit {
 
   @Input() items: Array<Item> = Array(0)
 
+  @Output() listItemClickEmitter = new EventEmitter();
+  @Output() deleteListItemClickEmitter = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onListItemClick(event: any) {
-    alert(event.elementNumber + " " + event.isChecked)
+    this.listItemClickEmitter.emit(event)
   }
 
   onDeleteListItemClick(elementNumber: number) {
-    alert(elementNumber)
+    this.deleteListItemClickEmitter.emit(elementNumber)
   }
 }

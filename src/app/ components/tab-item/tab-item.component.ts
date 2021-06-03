@@ -24,8 +24,21 @@ export class TabItemComponent implements OnInit {
   }
 
   onNewItemCreated(newItemText: String) {
-    alert(newItemText)
-    // TODO Send to server
+    this.itemsService.addListItem(newItemText).subscribe(
+      items => this.items = items
+    )
+  }
+
+  onListItemClick(event: any) {
+    this.itemsService.updateListItem(event.elementNumber, event.elementNumber).subscribe(
+      items => this.items = items
+    )
+  }
+
+  onDeleteListItemClick(elementNumber: number) {
+    this.itemsService.deleteListItem(elementNumber).subscribe(
+      items => this.items = items
+    )
   }
 
   private async getAllItems() {
