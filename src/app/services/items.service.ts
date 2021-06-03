@@ -34,7 +34,6 @@ export class ItemsService {
   }
 
   deleteListItem(elementNumber: number): Observable<Item[]> {
-    alert("called")
     let objectId = this.getItemObjectId(elementNumber)
     let url = Constants.serverAddress + Constants.deleteItemEndpoint + objectId
     let observable = this.httpClient.delete<Item[]>(url)
@@ -43,7 +42,6 @@ export class ItemsService {
   }
 
   addListItem(itemText: String): Observable<Item[]> {
-    alert("called")
     let url = Constants.serverAddress + Constants.getTodosEndpoint
     let observable = this.httpClient.post<Item[]>(url, JSON.stringify({
       "text": itemText
