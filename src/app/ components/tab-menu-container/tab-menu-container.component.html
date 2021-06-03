@@ -1,4 +1,4 @@
-<div>
+<div [ngClass]="'tabs'">
     <ul>
         <div *ngFor="let tabItem of tabItems">
             <li (click)="onTabClick(tabItem)">
