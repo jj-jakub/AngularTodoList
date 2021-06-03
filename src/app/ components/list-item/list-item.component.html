@@ -1,5 +1,5 @@
 <div>
-    <input (click)="onCheckboxClick()" type="checkbox" [checked]="item.isChecked">
+    <input (change)="onCheckboxClick($event)" type="checkbox" [checked]="item.done">
     
     <p>{{item.text}}</p>
     

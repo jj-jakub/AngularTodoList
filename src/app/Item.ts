@@ -1,13 +1,13 @@
 class Item {
     
-    constructor(_id: String, text: String, isChecked: Boolean) {
+    constructor(_id: String, text: String, done: Boolean) {
         this._id = _id
         this.text = text;
-        this.isChecked = isChecked
+        this.done = done
     }
 
     _id: String
     text: String
-    isChecked: Boolean
+    done: Boolean
 }
 export default Item

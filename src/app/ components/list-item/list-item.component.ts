@@ -19,9 +19,8 @@ export class ListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCheckboxClick() {
-    this.item.isChecked = !this.item.isChecked
-    this.checkboxClickEmitter.emit({elementNumber: this.elementNumber, isChecked: this.item.isChecked})
+  onCheckboxClick(event: any) {
+    this.checkboxClickEmitter.emit({elementNumber: this.elementNumber, done: event.target.checked})
   }
 
   onDeleteListItemClick() {

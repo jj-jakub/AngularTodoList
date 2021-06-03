@@ -1,7 +1,4 @@
 <div>
-    <!-- <app-all-list-container [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-all-list-container> -->
-    <!-- <app-finished-items-list [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"))></app-finished-items-list> -->
-    <!-- <app-todo-items-list-container [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-todo-items-list-container> -->
     <ng-container [ngSwitch]="activeItem">
         <app-all-list-container *ngSwitchCase="Constants.allItemsTabName" [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-all-list-container>
         <app-finished-items-list-container *ngSwitchCase="Constants.finishedItemsTabName" [items]="items" (listItemClickEmitter)="onListItemClick($event)" (deleteListItemClickEmitter)="onDeleteListItemClick($event)"></app-finished-items-list-container>
