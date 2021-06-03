@@ -1,5 +1,4 @@
 <div>
-    tab-item-component, activeItem: {{activeItem}}
     <ng-container [ngSwitch]="activeItem">
         <app-all-list-container *ngSwitchCase="Constants.allItemsTabName" [items]="items"></app-all-list-container>
         <app-finished-items-list-container *ngSwitchCase="Constants.finishedItemsTabName" [items]="items"></app-finished-items-list-container>
