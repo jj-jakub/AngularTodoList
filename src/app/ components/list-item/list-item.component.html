@@ -1,1 +1,9 @@
 <p>{{elementNumber}}: {{item.text}}, {{item.isChecked}}</p>
+
+<div>
+    <input (click)="onCheckboxClick()" type="checkbox" [checked]="item.isChecked">
+    
+    <p>{{item.text}}</p>
+    
+    <button (click)="onDeleteListItemClick()">Delete</button>
+</div>

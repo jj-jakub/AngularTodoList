@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import Item from '../../Item'
 
 @Component({
@@ -11,9 +11,20 @@ export class ListItemComponent implements OnInit {
   @Input() elementNumber!: number
   @Input() item!: Item;
 
+  @Output() public checkboxClickEmitter = new EventEmitter();
+  @Output() public deleteClickEmitter = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onCheckboxClick() {
+    this.item.isChecked = !this.item.isChecked
+    this.checkboxClickEmitter.emit({elementNumber: this.elementNumber, isChecked: this.item.isChecked})
+  }
+
+  onDeleteListItemClick() {
+    this.deleteClickEmitter.emit(this.elementNumber)
+  }
 }

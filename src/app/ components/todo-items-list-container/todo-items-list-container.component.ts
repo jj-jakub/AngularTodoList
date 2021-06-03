@@ -15,4 +15,11 @@ export class TodoItemsListContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onListItemClick(event: any) {
+    alert(event.elementNumber + " " + event.isChecked)
+  }
+
+  onDeleteListItemClick(elementNumber: number) {
+    alert(elementNumber)
+  }
 }
