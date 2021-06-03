@@ -9,50 +9,40 @@ import { Observable } from 'rxjs'
 })
 export class ItemsService {
 
-  private items: Array<Item> = []
-
   constructor(private httpClient: HttpClient) { }
 
    getAllItems(): Observable<Item[]> {
-    let url = Constants.serverAddress + Constants.getTodosEndpoint
-    let observable = this.httpClient.get<Item[]>(url)
-    observable.subscribe(items => this.items = items)
-    return observable
+    let url =  Constants.serverAddress + Constants.getTodosEndpoint
+    return this.httpClient.get<Item[]>(url)
   }
 
-  updateListItem(elementNumber: number, checked: Boolean): Observable<Item[]> {
+  updateListItem(elementNumber: number, checked: Boolean, items: Array<Item>): Observable<Item[]> {
     let url = Constants.serverAddress + Constants.getTodosEndpoint
-    let objectId = this.getItemObjectId(elementNumber)
-    let observable = this.httpClient.patch<Item[]>(url, JSON.stringify({
+    let objectId = this.getItemObjectId(elementNumber, items)
+    return this.httpClient.patch<Item[]>(url, JSON.stringify({
       "_id": objectId,
       "done": checked
     }), {
       headers: {'Content-Type': 'application/json'}
     })
-    observable.subscribe(items => this.items = items)
-    return observable
   }
 
-  deleteListItem(elementNumber: number): Observable<Item[]> {
-    let objectId = this.getItemObjectId(elementNumber)
+  deleteListItem(elementNumber: number, items: Array<Item>): Observable<Item[]> {
+    let objectId = this.getItemObjectId(elementNumber, items)
     let url = Constants.serverAddress + Constants.deleteItemEndpoint + objectId
-    let observable = this.httpClient.delete<Item[]>(url)
-    observable.subscribe(items => this.items = items)
-    return observable
+    return this.httpClient.delete<Item[]>(url)
   }
 
   addListItem(itemText: String): Observable<Item[]> {
     let url = Constants.serverAddress + Constants.getTodosEndpoint
-    let observable = this.httpClient.post<Item[]>(url, JSON.stringify({
+    return this.httpClient.post<Item[]>(url, JSON.stringify({
       "text": itemText
     }), {
       headers: {'Content-Type': 'application/json'}
     }) 
-    observable.subscribe(items => this.items = items)
-    return observable
   }
 
-  getItemObjectId(itemNumber: number) {
-    return this.items[itemNumber]._id
+  getItemObjectId(itemNumber: number, items: Array<Item>) {
+    return items[itemNumber]._id
   }
 }

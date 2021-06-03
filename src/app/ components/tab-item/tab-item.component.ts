@@ -30,13 +30,13 @@ export class TabItemComponent implements OnInit {
   }
 
   onListItemClick(event: any) {
-    this.itemsService.updateListItem(event.elementNumber, event.elementNumber).subscribe(
+    this.itemsService.updateListItem(event.elementNumber, event.elementNumber, this.items).subscribe(
       items => this.items = items
     )
   }
 
   onDeleteListItemClick(elementNumber: number) {
-    this.itemsService.deleteListItem(elementNumber).subscribe(
+    this.itemsService.deleteListItem(elementNumber, this.items).subscribe(
       items => this.items = items
     )
   }
