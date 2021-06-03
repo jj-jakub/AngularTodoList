@@ -1,7 +1,13 @@
 <p>tab-menu-container, activeItem: {{activeItem}}, tabItems: {{tabItems}}</p>
 
-<div *ngFor="let tabItem of tabItems">
-    <button (click)="onTabClick(tabItem)">{{tabItem}}</button>
+<div>
+    <ul>
+        <div *ngFor="let tabItem of tabItems">
+            <li (click)="onTabClick(tabItem)">
+                <div [ngClass]="{'active': tabItem === activeItem}">{{tabItem}}</div>
+            </li>
+        </div>
+    </ul>
 </div>
 <!-- let listItems = this.props.tabItems.map((item) =>
 <li onClick={() => this.onTabChangeEvent(item)}>

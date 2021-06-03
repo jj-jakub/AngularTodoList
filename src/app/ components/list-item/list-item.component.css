@@ -1,0 +1,12 @@
+div {
+    display: flex;
+    justify-content: center;
+}
+
+input, p, button {
+    padding: 0 10px 0 10px;
+    list-style-type: none;
+    /* margin: 24px 0 0 32px; */
+    font-size: 18px;
+    color: #555;
+}
