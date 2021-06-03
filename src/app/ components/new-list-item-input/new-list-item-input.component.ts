@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-new-list-item-input',
@@ -9,13 +9,15 @@ export class NewListItemInputComponent implements OnInit {
 
   public newItemText: String = ""
 
+  @Output() public eventEmitter = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onAddButtonClick() {
-    alert(this.newItemText)
+    this.eventEmitter.emit(this.newItemText)
     this.newItemText = ""
   }
 }

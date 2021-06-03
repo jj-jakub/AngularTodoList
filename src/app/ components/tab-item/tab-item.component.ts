@@ -20,6 +20,11 @@ export class TabItemComponent implements OnInit {
     this.items = this.itemsService.getItems()
   }
 
+  onNewItemCreated(newItemText: String) {
+    alert(newItemText)
+    // TODO Send to server
+  }
+
   private async getAllItems() {
       const res = await fetch(Constants.serverAddress + Constants.getTodosEndpoint)
       const text = await res.text()
