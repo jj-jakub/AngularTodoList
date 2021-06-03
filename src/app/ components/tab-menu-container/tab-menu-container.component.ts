@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tab-menu-container',
@@ -8,13 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TabMenuContainerComponent implements OnInit {
 
   @Input() public activeItem: String = ""
-  @Input() public tabItems: String = ""
+  @Input() public tabItems!: Array<String>
+
+  @Output() public eventEmitter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onTabClick(tabName: String) {
+    this.eventEmitter.emit(tabName)
+  }
 //   constructor() {
 //     super()
 //     this.onTabChangeEvent = this.onTabChangeEvent.bind(this)

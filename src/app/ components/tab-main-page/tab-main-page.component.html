@@ -1,5 +1,6 @@
 
 <div>
-    <app-tab-menu-container [activeItem]="activeItem" [tabItems]="tabItems"></app-tab-menu-container>
+    <p>tab-main-page, activeItem: {{activeItem}}</p>
+    <app-tab-menu-container (eventEmitter)="onTabItemChanged($event)" [activeItem]="activeItem" [tabItems]="tabItems"></app-tab-menu-container>
     <app-tab-item [activeItem]="activeItem"></app-tab-item>
 </div>

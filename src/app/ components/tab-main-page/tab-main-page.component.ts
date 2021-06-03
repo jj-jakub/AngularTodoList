@@ -8,11 +8,15 @@ import { Constants } from '../../constants/Constants'
 })
 export class TabMainPageComponent implements OnInit {
 
-  public activeItem: String = "abcd"
-  public tabItems = Constants.allItemsTabName
+  public tabItems = [Constants.allItemsTabName, Constants.finishedItemsTabName, Constants.todoItemsTabName] 
+  public activeItem: String = this.tabItems[0]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onTabItemChanged(tabName: String) {
+    this.activeItem = tabName
   }
 }
